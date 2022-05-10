@@ -1,13 +1,21 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import "./App.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LoginPage } from "./pages/LoginPage";
+import { RegisterPage } from "./pages/RegisterPage";
+import { Dashboard } from "./pages/Dashboard";
 
 function App() {
   return (
     <div>
-      Hello World
-      <Button variant="primary">
-        Primary <i class="fa-solid fa-0"></i>
-      </Button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
